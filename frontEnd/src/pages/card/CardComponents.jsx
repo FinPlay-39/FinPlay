@@ -16,13 +16,8 @@ export function CardItem({ c }) {
       className="card-item"
       style={{
   background: `
-    linear-gradient(135deg, ${t.bg1}, ${t.bg2}),
-    rgba(0, 0, 0, 0.4) /* subtle dark overlay to deepen tones */
-  `,
-  backgroundBlendMode: 'multiply', // darkens instead of brightens
-  border: `1px solid ${t.ring}55`,
-  boxShadow: `0 8px 24px rgba(0, 0, 0, 0.4)`,
-  backdropFilter: 'blur(2px)',
+    background: `linear-gradient(135deg, ${t.bg1}, ${t.bg2}, rgba(0,0,0,0.6))`,
+backgroundBlendMode: 'normal',
 }}
 
     >
