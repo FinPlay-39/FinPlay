@@ -101,6 +101,8 @@
   margin-top: 10px;
   font-weight: 700;
   line-height: 1.2;
+  font-size: 25px;
+  color: #e6eef5;
 }
 .card-subtitle {
   opacity: 0.75;
