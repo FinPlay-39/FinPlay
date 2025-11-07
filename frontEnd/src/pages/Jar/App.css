@@ -1,10 +1,9 @@
-@import url('https://fonts.googleapis.com/css2?family=Pirata+One&display=swap');
 
 html, body {
     height: 100%;
     margin: 0;
     padding: 0;
-    font-family: 'Pirata One', cursive;
+    font-family: 'Josefin Sans', cursive;
     color: #fff;
     overflow-x: hidden;
 }
@@ -32,6 +31,7 @@ h1 {
     font-size: clamp(2rem, 8vw, 4rem);
     margin: 20px 0;
     text-shadow: 2px 2px 5px rgba(0,0,0,0.8);
+    font-family: 'Cinzel', cursive;
 }
 
 .tagline {
@@ -59,6 +59,7 @@ h1 {
     box-shadow: 0px 5px 15px rgba(0,0,0,0.5);
     transition: transform 0.3s, box-shadow 0.3s;
     border: 2px solid rgba(255, 215, 0, 0.4);
+    font-family:'Cinzel';
 }
 
 .summary-card:hover {
@@ -119,8 +120,7 @@ h1 {
     position: relative;
     width: 160px;
     height: 120px;
-    /* Use local public images so they work both in dev and production */
-    background: url('/images/treasure-chest-empty.svg') no-repeat center/contain;
+    background: url('https://img.freepik.com/premium-vector/treasure-chest-illustration-treasure-cartoon-style-design-pirate-treasure-chest-logo-design_597063-116.jpg?w=360') no-repeat center/contain;
     overflow: hidden;
     margin-bottom: 10px;
 }
@@ -128,15 +128,12 @@ h1 {
 .coins {
     position: absolute;
     bottom: 0;
-    left: 0;
-    transform: none;
+    left: 50%;
+    transform: translateX(-50%);
     width: 100%;
     height: 0%;
-    /* Use SVG coins for sharp scaling; repeat and adjust size to tile nicely */
-    background: url('/images/coins.svg') repeat;
-    background-size: 40px 40px;
-    background-position: center bottom;
-    z-index: 2; /* ensure coins sit above the chest background */
+    background: url('https://png.pngtree.com/png-clipart/20190904/original/pngtree-round-cartoon-gold-coin-png-image_4488009.jpg') repeat;
+    background-size: 50px;
     transition: height 0.6s ease;
 }
 
@@ -186,7 +183,7 @@ h1 {
     font-weight: bold;
     cursor: pointer;
     transition: 0.3s;
-    font-family: 'Pirata One', cursive;
+    font-family: 'Josefin Sans', cursive;
 }
 
 .goal button:hover {
@@ -201,6 +198,7 @@ h1 {
     background: rgba(0,0,0,0.6);
     border-radius: 15px;
     box-shadow: 0px 5px 15px rgba(0,0,0,0.5);
+    font-family:'Josefin Sans', cursive;
 }
 
 .add-goal-section input, .add-goal-section button {
@@ -208,7 +206,7 @@ h1 {
     margin: 5px;
     border-radius: 10px;
     border: none;
-    font-family: 'Pirata One', cursive;
+    font-family: 'Josefin Sans', cursive;
     background-color: rgba(255, 255, 255, 0.1);
     color: #fff;
 }
@@ -224,9 +222,9 @@ h1 {
     background: linear-gradient(to bottom, #FFC107, #FF8C00);
 }
 .floating-coin {
-    width: 28px;
-    height: 28px;
-    background: url('/images/coins.svg') no-repeat center/contain;
+    width: 20px;
+    height: 20px;
+    background: url('https://i.ibb.co/zNxM3yd/coins.png') no-repeat center/contain;
     position: absolute;
     bottom: 50px;
     left: 50%;
