@@ -17,12 +17,12 @@ export function CardItem({ c }) {
       style={{
   background: `
     linear-gradient(135deg, ${t.bg1}, ${t.bg2}),
-    rgba(255, 255, 255, 0.6) /* stronger white overlay for visibility */
+    rgba(0, 0, 0, 0.4) /* subtle dark overlay to deepen tones */
   `,
-  backgroundBlendMode: 'overlay',
-  border: `1px solid ${t.ring}55`, // slightly stronger border
-  boxShadow: `0 8px 24px rgba(0, 0, 0, 0.25)`, // darker shadow for contrast
-  backdropFilter: 'blur(4px)', // optional: softens the background behind
+  backgroundBlendMode: 'multiply', // darkens instead of brightens
+  border: `1px solid ${t.ring}55`,
+  boxShadow: `0 8px 24px rgba(0, 0, 0, 0.4)`,
+  backdropFilter: 'blur(2px)',
 }}
 
     >
