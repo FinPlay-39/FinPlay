@@ -26,8 +26,9 @@ FinPlay is a pirate-themed, gamified financial planning web app that makes manag
 - Register a new pirate captain account to begin managing your financial treasures.
 - Log in as an existing captain to view and manage your financial data.
 - Enjoy interactive UI feedback and celebrate your financial milestones.
-
-
+  
+## Deployment Link
+https://fin-play-five.vercel.app/
 ---
 
 Embark on your journey to financial freedom with FinPlay — loot the seas and bury your savings! ⚓🏴‍☠️
