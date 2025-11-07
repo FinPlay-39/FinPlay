@@ -12,15 +12,12 @@
     --white: #e7e6f6;
 }
 
-body {
+body,
+.app {
     font-family: 'Pirata One', serif;
     background: var(--dark-blue);
     color: var(--white);
     min-height: 100vh;
-}
-
-.app {
-    background: transparent;
 }
 
 /* Header */
@@ -82,31 +79,25 @@ body {
     background: var(--white);
     color: var(--dark-blue);
 }
+
 /* Auth Section */
 .auth {
     display: flex;
     justify-content: center;
     padding: 50px 20px;
-    background: transparent;
 }
 
 .auth-container {
     width: 100%;
     max-width: 400px;
-    position: relative;
-    z-index: 2; /* sit above Vanta canvas */
 }
 
 .form {
     display: none;
-    /* translucent surface so Vanta waves show through */
-    background: rgba(20,34,64,0.66);
+    background: var(--light-blue);
     padding: 30px;
     border-radius: 12px;
-    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.55);
-    border: 1px solid rgba(255,255,255,0.04);
-    backdrop-filter: blur(6px);
-    -webkit-backdrop-filter: blur(6px);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
 
 .form.active {
@@ -131,6 +122,7 @@ body {
     border: none;
     border-radius: 8px;
     outline: none;
+    font-family: 'Montserrat';
 }
 
 .toggle-password {
