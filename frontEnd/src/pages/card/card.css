@@ -24,13 +24,14 @@
   flex-wrap: wrap;
   gap: 8px;
   align-items: center;
+   background: rgba(15, 23, 42, 0.6); /* dark navy backdrop */
 }
 
 .fp-btn {
   padding: 8px 12px;
   border-radius: 10px;
-  background: rgba(255, 255, 255, 0.10);
-  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(30, 41, 59, 0.7); /* deep slate blue-gray */
+  border: 1px solid rgba(71, 85, 105, 0.5); /* steel border */
   color: #e5e7eb;
 }
 
@@ -42,10 +43,16 @@
 .fp-select {
   padding: 8px 10px;
   border-radius: 10px;
-  background: rgba(255, 255, 255, 0.10);
-  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(30, 41, 59, 0.7); /* deep slate blue-gray */
+  border: 1px solid rgba(71, 85, 105, 0.5); /* steel border */
   color: #e5e7eb;
 }
+.fp-btn:hover,
+.fp-select:hover {
+  background: rgba(51, 65, 85, 0.8); /* slightly lighter on hover */
+  border-color: rgba(148, 163, 184, 0.6);
+}
+
 
 /* Card styles */
 .card-item {
@@ -53,6 +60,7 @@
   border-radius: 16px;
   transition: transform .15s ease;
   font-family:'Josefin Sans';
+  color: #f8fafc; /* slightly brighter text */
 }
 .card-item:hover {
   transform: scale(1.02);
@@ -98,6 +106,7 @@
   opacity: 0.75;
   font-size: 13px;
   margin-top: 4px;
+  color: #cbd5e1; /* softer blue-gray */
 }
 .card-footer {
   margin-top: 12px;
@@ -106,13 +115,14 @@
   font-size: 12px;
   opacity: 0.7;
   text-transform: capitalize;
+  color: #cbd5e1;
 }
 
 /* Skeleton */
 .card-skeleton {
   height: 140px;
   border-radius: 16px;
-  background: rgba(255, 255, 255, .08);
+   background: rgba(30, 41, 59, 0.6); /* dark slate blue */
   animation: fpPulse 1.2s ease-in-out infinite;
 }
 
@@ -153,4 +163,6 @@
 .level-badge{
     margin:1rem;
     padding:1rem;
+  background: rgba(31, 41, 55, 0.8); /* dark gray-blue */
+  color: #f1f5f9; /* off-white for visibility */
 }
