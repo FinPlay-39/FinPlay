@@ -105,8 +105,8 @@ export default function Login() {
             });
             console.log("Login Success");
             localStorage.setItem("userInfo", JSON.stringify(data));
-            setUserInfo(data); 
-            // Redirect or update UI after login
+            setUserInfo(data);
+            window.dispatchEvent(new Event("userInfoChanged"));
             navigate("/");
         } catch (err) {
             setError(err.response?.data?.message || "Login failed");
