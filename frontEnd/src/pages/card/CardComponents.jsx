@@ -30,10 +30,12 @@ export function CardItem({ c }) {
         <div className="card-icon">{c.icon || t.icon}</div>
         <div className="card-badges">
           {c.rarity && (
-            <CardBadge style={{ background: rb.bg, color: rb.color }}>
-              {c.rarity}
-            </CardBadge>
+            <CardBadge className="bordered" style={{ color: rb.color }}>
+  {c.rarity}
+</CardBadge>
+
           )}
+          
           {c.level && (
             <CardBadge className="level-badge">Lv {c.level}</CardBadge>
           )}
