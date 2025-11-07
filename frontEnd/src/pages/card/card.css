@@ -60,7 +60,7 @@
   border-radius: 16px;
   transition: transform .15s ease;
   font-family:'Josefin Sans';
-  color:  #cbd5e1;/* slightly brighter text */
+  color: #f8fafc !important; /* slightly brighter text */
 }
 .card-item:hover {
   transform: scale(1.02);
