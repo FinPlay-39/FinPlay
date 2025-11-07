@@ -332,7 +332,7 @@
     padding: 1.5rem;
     border-radius: 15px;
     border: 2px solid var(--border-color);
-    box-shadow: 0 5px 15px var(--card-shadow);
+    box-shadow: 0 5px 5px var(--card-shadow);
 }
 
 .section-header {
