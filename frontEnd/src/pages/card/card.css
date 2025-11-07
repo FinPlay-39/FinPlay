@@ -2,12 +2,14 @@
 .fp-wrap {
   display: grid;
   gap: 16px;
+  margin:2rem;
 }
 
 .fp-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  font-family:'Cinzel';
 }
 
 .fp-grid {
@@ -47,51 +49,13 @@
 
 /* Card styles */
 .card-item {
-  position: relative;
-  padding: 0; /* surface provides padding now */
-  border-radius: 16px;
-  transition: transform .15s ease;
-  overflow: hidden;
-  /* preserve potential gradient behind but keep content on top via .card-surface */
-}
-
-.card-item .card-surface {
-  position: relative;
-  z-index: 2;
-  background: rgba(6,8,12,0.82); /* stronger dark surface */
-  backdrop-filter: blur(6px);
-  -webkit-backdrop-filter: blur(6px);
   padding: 16px;
   border-radius: 16px;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  min-height: 140px;
-  border: 1px solid rgba(255,255,255,0.04);
-  box-shadow: 0 10px 30px rgba(0,0,0,0.6), inset 0 1px 0 rgba(255,255,255,0.02);
-}
-
-.card-icon {
-  background: rgba(255,255,255,0.03);
-  padding: 8px;
-  border-radius: 10px;
-  color: #fff;
-}
-
-.card-title {
-  margin-top: 8px;
-  font-weight: 800;
-  color: #fff;
-  font-size: 1.1rem;
-}
-
-.card-subtitle {
-  opacity: 0.95;
-  color: #d7e1ff;
+  transition: transform .15s ease;
+  font-family:'Josefin Sans';
 }
 .card-item:hover {
   transform: scale(1.02);
-  box-shadow: 0 12px 30px rgba(0,0,0,0.75), inset 0 1px 0 rgba(255,255,255,0.02);
 }
 .card-top {
   display: flex;
@@ -106,17 +70,14 @@
   gap: 6px;
 }
 .card-badge {
-  font-size: 11px;
+  font-size: 10px;
   text-transform: uppercase;
   letter-spacing: 1px;
-  padding: 6px 10px;
+  padding: 4px 8px;
   border-radius: 999px;
-  background: rgba(255,255,255,0.06);
-  color: #fff;
-  border: 1px solid rgba(255,255,255,0.04);
 }
 .level-badge {
-  background: rgba(255,255,255,.08);
+  background: rgba(255,255,255,.10);
   color: #e5e7eb;
 }
 .card-title {
@@ -125,28 +86,25 @@
   line-height: 1.2;
 }
 .card-subtitle {
-  opacity: 0.85;
+  opacity: 0.75;
   font-size: 13px;
   margin-top: 4px;
-  color: #dfe7ff;
 }
 .card-footer {
   margin-top: 12px;
   display: flex;
   justify-content: space-between;
   font-size: 12px;
-  opacity: 0.95;
+  opacity: 0.7;
   text-transform: capitalize;
-  color: #cbd5ff;
 }
 
 /* Skeleton */
 .card-skeleton {
   height: 140px;
   border-radius: 16px;
-  background: linear-gradient(90deg, rgba(255,255,255,0.04), rgba(255,255,255,0.06));
+  background: rgba(255, 255, 255, .08);
   animation: fpPulse 1.2s ease-in-out infinite;
-  box-shadow: 0 6px 18px rgba(0,0,0,0.5);
 }
 
 /* Animations */
@@ -183,4 +141,7 @@
   margin: 0 auto;
   padding: 20px;
 }
-
+.level-badge{
+    margin:1rem;
+    padding:1rem;
+}
