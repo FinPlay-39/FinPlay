@@ -15,10 +15,14 @@ export function CardItem({ c }) {
     <div
       className="card-item"
       style={{
-        background: `linear-gradient(135deg, ${t.bg1}, ${t.bg2})`,
-        border: `1px solid ${t.ring}22`,
-        boxShadow: `0 6px 24px ${t.ring}3a`,
-      }}
+  background: `
+    linear-gradient(135deg, ${t.bg1}, ${t.bg2}),
+    rgba(255, 255, 255, 0.2) /* light overlay for brightness */
+  `,
+  backgroundBlendMode: 'overlay',
+  border: `1px solid ${t.ring}22`,
+  boxShadow: `0 6px 24px ${t.ring}3a`,
+}}
     >
       <div className="card-surface">
       {/* Top */}
