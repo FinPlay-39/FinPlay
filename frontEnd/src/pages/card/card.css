@@ -60,7 +60,7 @@
   border-radius: 16px;
   transition: transform .15s ease;
   font-family:'Josefin Sans';
-  color: #f8fafc; /* slightly brighter text */
+  color:  #cbd5e1;/* slightly brighter text */
 }
 .card-item:hover {
   transform: scale(1.02);
@@ -125,6 +125,7 @@
   height: 140px;
   border-radius: 16px;
    background: rgba(30, 41, 59, 0.6); /* dark slate blue */
+  color:  #cbd5e1;
   animation: fpPulse 1.2s ease-in-out infinite;
 }
 
