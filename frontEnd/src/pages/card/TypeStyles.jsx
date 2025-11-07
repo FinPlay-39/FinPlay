@@ -10,8 +10,20 @@ export const TYPE_STYLES = {
 }
 
 export const RARITY_BADGE = {
-  common:{ bg:'rgba(255,255,255,.12)', color:'#e5e7eb' },
-  rare:{ bg:'rgba(59,130,246,.18)', color:'#bfdbfe' },
-  epic:{ bg:'rgba(168,85,247,.20)', color:'#e9d5ff' },
-  legendary:{ bg:'rgba(250,204,21,.22)', color:'#fef08a' }
+  common: {
+    bg: 'rgba(107, 114, 128, 0.25)', // dark gray tone
+    color: '#d1d5db', // light gray text
+  },
+  rare: {
+    bg: 'rgba(37, 99, 235, 0.35)', // deeper royal blue
+    color: '#93c5fd', // lighter blue text
+  },
+  epic: {
+    bg: 'rgba(126, 34, 206, 0.35)', // darker purple
+    color: '#d8b4fe', // soft lavender text
+  },
+  legendary: {
+    bg: 'rgba(202, 138, 4, 0.35)', // deeper golden amber
+    color: '#fde68a', // pale gold text
+  },
 }
