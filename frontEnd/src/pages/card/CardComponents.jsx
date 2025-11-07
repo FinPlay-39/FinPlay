@@ -15,7 +15,7 @@ export function CardItem({ c }) {
     <div
       className="card-item"
       style={{
-  background:  `linear-gradient(135deg, ${t.bg1}, ${t.bg2}, rgba(0,0,0,0.6)) !important`,
+  background:  `linear-gradient(135deg, ${t.bg1}, ${t.bg2}, rgba(0,0,0,0.6))`,
 backgroundBlendMode: 'normal'
 }}
 
