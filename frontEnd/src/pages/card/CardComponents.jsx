@@ -39,7 +39,7 @@ backgroundBlendMode: 'normal'
       </div>
 
       {/* Title */}
-      <div className="card-title">{c.title}</div>
+      <div className="card-title2">{c.title}</div>
 
       {/* Subtitle */}
       {!!c.subtitle && <div className="card-subtitle">{c.subtitle}</div>}
