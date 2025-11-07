@@ -70,12 +70,21 @@
   gap: 6px;
 }
 .card-badge {
-  font-size: 10px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2px 8px;
+  border-radius: 8px;
+  font-size: 0.8rem;
+  font-weight: 600;
   text-transform: uppercase;
-  letter-spacing: 1px;
-  padding: 4px 8px;
-  border-radius: 999px;
 }
+
+.card-badge.bordered {
+  background: transparent !important;
+  border: 1px solid currentColor;
+}
+
 .level-badge {
   background: rgba(255,255,255,.10);
   color: #e5e7eb;
