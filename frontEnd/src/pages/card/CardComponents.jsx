@@ -13,7 +13,7 @@ export function CardItem({ c }) {
 
   return (
     <div
-      className="card-item"
+      className="card-item2"
       style={{
   background:  `linear-gradient(135deg, ${t.bg1}, ${t.bg2}, rgba(0,0,0,0.6))`,
 backgroundBlendMode: 'normal'
