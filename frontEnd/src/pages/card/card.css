@@ -102,13 +102,13 @@
   font-weight: 700;
   line-height: 1.2;
   font-size: 25px;
-  color: #e6eef5;
+  color: #e6eef5 !important;
 }
 .card-subtitle {
   opacity: 0.75;
   font-size: 13px;
   margin-top: 4px;
-  color: #cbd5e1; /* softer blue-gray */
+  color: #cbd5e1 !important; /* softer blue-gray */
 }
 .card-footer {
   margin-top: 12px;
@@ -117,7 +117,7 @@
   font-size: 12px;
   opacity: 0.7;
   text-transform: capitalize;
-  color: #cbd5e1;
+  color: #cbd5e1 !important;
 }
 
 /* Skeleton */
