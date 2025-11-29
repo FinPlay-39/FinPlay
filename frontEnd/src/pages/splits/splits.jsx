@@ -168,10 +168,11 @@ console.log(splitData)
   }
 
   function resetForm() {
+      const userInfo = JSON.parse(localStorage.getItem("userInfo"));
     setCrew([
-      { id: "1", username: "Asha", paid: 0, share: 0 },
-      { id: "2", username: "Ravi", paid: 0, share: 0 },
-    ]);
+      { id: "1", username: userInfo?.name || "", paid: 0, share: 0, locked: true },
+  { id: "2", username: "", paid: 0, share: 0 },
+]);
     setSplitEqually(true);
   }
   async function handleDeleteSettlement(settlement) {
