@@ -358,7 +358,7 @@ function CrewTable({ crew, splitEqually, updateCrewMember, removeCrewMember }) {
   )
 }
 
-function function CrewRow({ member, splitEqually, updateCrewMember, removeCrewMember, canRemove, allUsers }) {
+function CrewRow({ member, splitEqually, updateCrewMember, removeCrewMember, canRemove, allUsers }) {
   return (
     <div className="crew-row">
       {/* Username input */}
