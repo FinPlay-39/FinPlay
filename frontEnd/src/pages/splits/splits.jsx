@@ -351,22 +351,30 @@ function CrewTable({ crew, splitEqually, updateCrewMember, removeCrewMember }) {
           updateCrewMember={updateCrewMember}
           removeCrewMember={removeCrewMember}
           canRemove={crew.length > 1}
+          allUsers={allUsers}
         />
       ))}
     </div>
   )
 }
 
-function CrewRow({ member, splitEqually, updateCrewMember, removeCrewMember, canRemove }) {
+function function CrewRow({ member, splitEqually, updateCrewMember, removeCrewMember, canRemove, allUsers }) {
   return (
     <div className="crew-row">
       {/* Username input */}
-      <input
-        type="text"
-        value={member.username}   // â use username instead of name
-        onChange={(e) => updateCrewMember(member.id, "username", e.target.value)}
-        placeholder="Username"
-      />
+      <select
+  value={member.username}
+  onChange={(e) => updateCrewMember(member.id, "username", e.target.value)}
+>
+  <option value="">Select user</option>
+
+  {allUsers.map((u) => (
+    <option key={u._id} value={u.name}>
+      {u.name}
+    </option>
+  ))}
+</select>
+
       <input
         type="number"
         value={member.paid}
