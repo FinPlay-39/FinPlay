@@ -366,39 +366,65 @@ function CrewTable({ crew, splitEqually, updateCrewMember, removeCrewMember , al
 function CrewRow({ member, splitEqually, updateCrewMember, removeCrewMember, canRemove, allUsers }) {
   return (
     <div className="crew-row">
-      {/* Username input */}
-      {member.locked ? (
-  <input type="text" value={member.username} disabled />
-) : (
-  <select
-    value={member.username}
-    onChange={(e) => updateCrewMember(member.id, "username", e.target.value)}
-  >
-    <option value="">Select user</option>
-    {allUsers.map((u) => (
-      <option key={u._id} value={u.name}>
-        {u.name}
-      </option>
-    ))}
-  </select>
-)}
 
+  {/* Username input */}
+  {member.locked ? (
+    <input type="text" value={member.username} disabled />
+  ) : (
+    <select
+      value={member.username}
+      onChange={(e) =>
+        updateCrewMember(member.id, "username", e.target.value)
+      }
+    >
+      <option value="">Select user</option>
 
-      <input
-        type="number"
-        value={member.paid}
-        onChange={(e) => updateCrewMember(member.id, "paid", Number.parseFloat(e.target.value) || 0)}
-      />
-      <input
-        type="number"
-        value={member.share.toFixed(2)}
-        onChange={(e) => !splitEqually && updateCrewMember(member.id, "share", Number.parseFloat(e.target.value) || 0)}
-        disabled={splitEqually}
-      />
-      {canRemove && !member.locked && (
-  <button onClick={() => removeCrewMember(member.id)}>&times;{'\u00D7'}</button>
-)}
-    </div>
+      {allUsers
+        .filter((u) => u.name !== userInfo?.name) // remove current user
+        .map((u) => (
+          <option key={u._id} value={u.name}>
+            {u.name}
+          </option>
+        ))}
+    </select>
+  )}
+
+  {/* PAID INPUT — show placeholder, empty when 0 */}
+  <input
+    type="number"
+    placeholder="0"
+    value={member.paid === 0 ? "" : member.paid}
+    onChange={(e) =>
+      updateCrewMember(
+        member.id,
+        "paid",
+        Number(e.target.value) || 0
+      )
+    }
+  />
+
+  {/* SHARE INPUT — also show placeholder, empty when 0, disabled if equal mode */}
+  <input
+    type="number"
+    placeholder="0"
+    value={member.share === 0 ? "" : member.share}
+    onChange={(e) =>
+      !splitEqually &&
+      updateCrewMember(
+        member.id,
+        "share",
+        Number.parseFloat(e.target.value) || 0
+      )
+    }
+    disabled={splitEqually}
+  />
+
+  {/* Remove button */}
+  {canRemove && !member.locked && (
+    <button onClick={() => removeCrewMember(member.id)}>&times;</button>
+  )}
+</div>
+
   )
 }
 
