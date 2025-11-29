@@ -1,6 +1,24 @@
 import Split from "../models/Splits.js";
 import Settlement from "../models/Settlement.js";
 import mongoose from "mongoose";
+import User from "../models/User.js";
+
+// @desc Get all usernames
+// @route GET /api/users/usernames
+// @access Private
+export const getAllUsernames = async (req, res) => {
+    try {
+        // Fetch only the username + optionally name
+        const users = await User.find({}, "username name").lean();
+
+        res.json(users);
+    } catch (error) {
+        res.status(500).json({ 
+            message: "Error fetching usernames", 
+            error: error.message 
+        });
+    }
+};
 
 // @desc Get all splits for current user
 // @route GET /api/splits
@@ -146,3 +164,4 @@ export const settleSettlement = async (req, res) => {
         res.status(500).json({ message: error.message });
     }
 };
+
