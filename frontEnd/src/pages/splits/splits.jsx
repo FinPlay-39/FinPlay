@@ -262,6 +262,7 @@ async function handleSettleSettlement(settlement) {
             totalPaid={totalPaid}
             totalShare={totalShare}
             saveSplit={saveSplit}
+               allUsers={allUsers} 
           />
           <div className="payments-container">
       <div className="payments-inner">
@@ -299,7 +300,8 @@ function CrewExpenses({
   resetForm,
   totalPaid,
   totalShare,
-  saveSplit
+  saveSplit,
+    allUsers
 }) {
   return (
     <div className="crew-card">
@@ -312,6 +314,7 @@ function CrewExpenses({
         splitEqually={splitEqually}
         updateCrewMember={updateCrewMember}
         removeCrewMember={removeCrewMember}
+           allUsers={allUsers} 
       />
       <ActionButtons addCrewMember={addCrewMember} resetForm={resetForm} saveSplit={saveSplit} />
       <Totals totalPaid={totalPaid} totalShare={totalShare} />
@@ -333,7 +336,7 @@ function SplitEquallyCheckbox({ splitEqually, setSplitEqually }) {
   )
 }
 
-function CrewTable({ crew, splitEqually, updateCrewMember, removeCrewMember }) {
+function CrewTable({ crew, splitEqually, updateCrewMember, removeCrewMember , allUsers}) {
   return (
     <div className="crew-table">
       <div className="crew-table-header">
