@@ -11,10 +11,11 @@ export default function Splits() {
   const token = userInfo?.token;
   const [dbSettlements, setDbSettlements] = useState([]);
 
-  const [crew, setCrew] = useState([
-    { id: "1", username: "Ayushi Adhikari", paid: 1200, share: 0 },
-    { id: "2", username: "Riddhi Singh", paid: 700, share: 0 },
-  ]);
+  const [crew, setCrew] = useState(() => [
+  { id: "1", username: userInfo?.name || "", paid: 0, share: 0, locked: true },
+  { id: "2", username: "", paid: 0, share: 0 },
+]);
+
   const [splitEqually, setSplitEqually] = useState(true);
   const [settlements, setSettlements] = useState([]);
   const [allUsers, setAllUsers] = useState([]); // all registered users
@@ -158,8 +159,9 @@ console.log(splitData)
   }
 
   function removeCrewMember(id) {
-    setCrew(prev => prev.filter(m => m.id !== id));
-  }
+  setCrew(prev => prev.filter(m => m.id !== id || m.locked));
+}
+
 
   function updateCrewMember(id, field, value) {
     setCrew(prev => prev.map(m => (m.id === id ? { ...m, [field]: value } : m)));
@@ -365,18 +367,22 @@ function CrewRow({ member, splitEqually, updateCrewMember, removeCrewMember, can
   return (
     <div className="crew-row">
       {/* Username input */}
-      <select
-  value={member.username}
-  onChange={(e) => updateCrewMember(member.id, "username", e.target.value)}
->
-  <option value="">Select user</option>
+      {member.locked ? (
+  <input type="text" value={member.username} disabled />
+) : (
+  <select
+    value={member.username}
+    onChange={(e) => updateCrewMember(member.id, "username", e.target.value)}
+  >
+    <option value="">Select user</option>
+    {allUsers.map((u) => (
+      <option key={u._id} value={u.name}>
+        {u.name}
+      </option>
+    ))}
+  </select>
+)}
 
-  {allUsers.map((u) => (
-    <option key={u._id} value={u.name}>
-      {u.name}
-    </option>
-  ))}
-</select>
 
       <input
         type="number"
@@ -389,7 +395,9 @@ function CrewRow({ member, splitEqually, updateCrewMember, removeCrewMember, can
         onChange={(e) => !splitEqually && updateCrewMember(member.id, "share", Number.parseFloat(e.target.value) || 0)}
         disabled={splitEqually}
       />
-      {canRemove && <button onClick={() => removeCrewMember(member.id)}>{'\u00D7'}</button>}
+      {canRemove && !member.locked && (
+  <button onClick={() => removeCrewMember(member.id)}>&times;{'\u00D7'}</button>
+)}
     </div>
   )
 }
