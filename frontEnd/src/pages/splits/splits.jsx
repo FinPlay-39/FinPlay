@@ -265,6 +265,7 @@ async function handleSettleSettlement(settlement) {
             totalShare={totalShare}
             saveSplit={saveSplit}
                allUsers={allUsers} 
+                currentUser={userInfo}
           />
           <div className="payments-container">
       <div className="payments-inner">
@@ -303,7 +304,9 @@ function CrewExpenses({
   totalPaid,
   totalShare,
   saveSplit,
-    allUsers
+    allUsers,
+    currentUser
+    
 }) {
   return (
     <div className="crew-card">
@@ -317,6 +320,7 @@ function CrewExpenses({
         updateCrewMember={updateCrewMember}
         removeCrewMember={removeCrewMember}
            allUsers={allUsers} 
+            currentUser={currentUser}
       />
       <ActionButtons addCrewMember={addCrewMember} resetForm={resetForm} saveSplit={saveSplit} />
       <Totals totalPaid={totalPaid} totalShare={totalShare} />
@@ -338,7 +342,7 @@ function SplitEquallyCheckbox({ splitEqually, setSplitEqually }) {
   )
 }
 
-function CrewTable({ crew, splitEqually, updateCrewMember, removeCrewMember , allUsers}) {
+function CrewTable({ crew, splitEqually, updateCrewMember, removeCrewMember , allUsers, currentUser}) {
   return (
     <div className="crew-table">
       <div className="crew-table-header">
@@ -357,13 +361,15 @@ function CrewTable({ crew, splitEqually, updateCrewMember, removeCrewMember , al
           removeCrewMember={removeCrewMember}
           canRemove={crew.length > 1}
           allUsers={allUsers}
+              currentUser={currentUser}
+            
         />
       ))}
     </div>
   )
 }
 
-function CrewRow({ member, splitEqually, updateCrewMember, removeCrewMember, canRemove, allUsers }) {
+function CrewRow({ member, splitEqually, updateCrewMember, removeCrewMember, canRemove, allUsers, currentUser }) {
   return (
     <div className="crew-row">
 
@@ -380,12 +386,13 @@ function CrewRow({ member, splitEqually, updateCrewMember, removeCrewMember, can
       <option value="">Select user</option>
 
       {allUsers
-        .filter((u) => u.name !== userInfo?.name) // remove current user
-        .map((u) => (
-          <option key={u._id} value={u.name}>
-            {u.name}
-          </option>
-        ))}
+  .filter(u => u.name !== currentUser?.name)
+  .map(u => (
+    <option key={u._id} value={u.name}>
+      {u.name}
+    </option>
+))}
+
     </select>
   )}
 
